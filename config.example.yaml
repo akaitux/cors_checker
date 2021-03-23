@@ -1,0 +1,32 @@
+timeout: 10
+#zbx_discovery_host: "virt.cors.checker"
+#zbx_discovery_key: "disc.cors"
+#zbx_discovery_item_key: "cors.checkLOL"
+#zbx_host: "127.0.0.1"
+#zbx_host_reserve: "127.0.0.1"
+error_if_unavailable: false
+
+checks:
+  - name: "Test"
+    request_to: 
+          - "https://example/hey"
+    allowed_hosts:
+      - "http://somehost.ru"
+    credentials: true 
+    preflight_headers: 
+      - Accept
+      - Authorization
+      - Cache-Control
+      - Content-Type
+      - DNT
+      - If-Modified-Since
+      - Keep-Alive
+      - Origin
+      - User-Agent
+      - X-Requested-With
+      - X-Ally
+      - cache
+      - X-CSRFToken
+      - Date
+      - X-USER-PROFILE-ID
+    preflight_methods: ["GET","POST"]
